@@ -1,0 +1,61 @@
+﻿<section>
+    <form class="form-horizontal" method="post">
+        <fieldset>
+            <legend>Add Book</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Name</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="textinput" type="text" placeholder="Name" class="form-control input-md" required="" ng-model="composeBook.name">
+                    <span ng-show="error.Name">{{error.Name}}</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+               
+                    <label class="col-md-4 control-label" for="textinput">Authors</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="textinput" type="text" placeholder="Authors" class="form-control input-md" ng-model="composeBook.authors" ng-list required>
+                    </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Image Url</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="textinput" type="text" placeholder="Image" class="form-control input-md" ng-model="composeBook.image">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">File Url</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="textinput" type="text" placeholder="File" class="form-control input-md" required="" ng-model="composeBook.file">
+                   
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Description</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="textinput" type="text" placeholder="Description" class="form-control input-md" required="" ng-model="composeBook.description">
+
+                </div>
+            </div>
+         
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton"></label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary" ng-click="addBook()">Save</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+
+</section>

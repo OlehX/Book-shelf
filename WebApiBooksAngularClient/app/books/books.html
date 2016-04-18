@@ -1,0 +1,86 @@
+﻿<section>
+    <div class="row">
+        <div class="col-md-8">
+      
+            <div class="panel panel-default">
+              
+                   
+                    
+             
+
+                <div class="panel-body">
+                    <ul class="list-unstyled clubList">
+                        
+                        <li ng-repeat="d in pages[info.currentPage].books | filter:query  ">
+                           
+                            <div class="row">
+                                <div class="col-xs-12"><h3>{{d.name }}<br />
+                                <small ng-repeat="a in d.authors"> {{a.name}} {{a.sName}} | </small>
+</h3></div>
+                                    <div class="col-xs-4"><a ng-href="{{d.file}}"><img class="col-xs-12" ng-src="{{d.image}}" /></a> </div>
+                                    <div class="col-xs-8">    {{d.description}}             </div>
+                                </div>
+                            
+                            
+                            <br> 
+                            </li>
+                    </ul>
+                    <pager total-pages="info.totalPages" current-page="info.currentPage" page-action="navigate(pageNumber)"></pager>
+                </div>
+            </div>
+        </div>
+      
+          
+       
+            <div class="col-md-4">
+            
+
+                    <div class="well well-sm" role="alert">
+                        <div class="row">
+                         
+                            <div class="col-xs-7">
+                                <div ng-show="changeany(orderProp)">
+                                    <input class="form-control" placeholder="Search" ng-model="query">
+                                </div>
+                                <div ng-show="changebook(orderProp)">
+                                    <input class="form-control" placeholder="Search" ng-model="query.name">
+                                </div>
+                                <div ng-show="change(orderProp)">
+                                    <input class="form-control" placeholder="Search" ng-model="query.authors.name">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-5">
+                                <div>
+                                    <select class="form-control" ng-model="orderProp">
+                                        <option ng-attr-value="Book">Book</option>
+                                        <option ng-attr-value="Authors">Authors</option>
+                                        <option ng-attr-value="Any">Any</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">paging options</div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="form-group-sm">
+                                    <label for="pageSize">page size</label>
+                                    <input id="pageSize" type="number" class="form-control" placeholder="page size" max="100" min="0" ng-model="options.size" ng-change="clear()">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            
+                    <div class="alert alert-info" role="alert">
+                        <a href="#books/add" class="btn btn-info btn-lg" role="button"> Add book</a>
+                    </div>
+                </div>
+      
+        </div>
+</section>
